@@ -36,7 +36,7 @@ window.addEdge = function() {
     if (graph.addEdge(start, end, weight)) {
         showAlert(`Arista añadido: ${start} -> ${end} (Weight: ${weight})`);
     } else {
-        showAlert(`Error: no se añadio ningun vertice ${start} -> ${end}`);
+        showAlert(`Error: no se añadio ningun vertice ${start} ${end}`);
     }
     document.getElementById('start').value = '';
     document.getElementById('end').value = '';
