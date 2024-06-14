@@ -1,11 +1,9 @@
-/* Reset de estilos */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Estilos generales */
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
@@ -24,13 +22,13 @@ body {
     background-color: #fff;
     border-radius: 8px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Centrar el contenido del contenedor */
+    text-align: center; 
 }
 
 h1, h2 {
     color: #333;
     margin-bottom: 10px;
-    text-align: center; /* Centrar los títulos */
+    text-align: center; 
 }
 
 .input-section {
@@ -39,7 +37,7 @@ h1, h2 {
 
 .input-container {
     margin-bottom: 20px;
-    text-align: center; /* Centrar el contenido de los contenedores de entrada */
+    text-align: center; 
 }
 
 input[type="text"], input[type="number"], button {
@@ -61,7 +59,7 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease;
     width: 120px;
-    margin-top: 10px; /* Espacio arriba y abajo */
+    margin-top: 10px; 
 }
 
 button:hover {
@@ -75,7 +73,7 @@ button:hover {
     border: 1px solid #ccc;
     border-radius: 4px;
     min-height: 50px;
-    text-align: left; /* Alinear texto a la izquierda */
+    text-align: left; 
 }
 
 .modal {
@@ -98,7 +96,7 @@ button:hover {
     width: 80%;
     border-radius: 8px;
     position: relative;
-    text-align: center; /* Centrar el contenido del modal */
+    text-align: center; 
 }
 
 .close {
