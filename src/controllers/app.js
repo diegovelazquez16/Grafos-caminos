@@ -26,17 +26,17 @@ window.addVertices = function() {
     const vertices = verticesInput.split(',').map(v => v.trim());
     graph.addVertices(...vertices);
     document.getElementById('vertices').value = '';
-    showAlert(`Vertices añadidos: ${vertices.join(', ')}`);
+    showAlert(`Vértices agregados: ${vertices.join(', ')}`);
 }
 
 window.addEdge = function() {
     const start = document.getElementById('start').value;
     const end = document.getElementById('end').value;
     const weight = parseInt(document.getElementById('weight').value, 10);
-    if (graph.addEdge(start, end, weight)) {
-        showAlert(`Arista añadido: ${start} -> ${end} (Weight: ${weight})`);
+    if (graph.addConnection(start, end, weight)) {
+        showAlert(`Arista agregada: ${start} -> ${end} (Peso: ${weight})`);
     } else {
-        showAlert(`Error: no se añadio ningun vertice ${start} ${end}`);
+        showAlert(`Error: No se pudo agregar la arista ${start} -> ${end}`);
     }
     document.getElementById('start').value = '';
     document.getElementById('end').value = '';
@@ -44,10 +44,39 @@ window.addEdge = function() {
 }
 
 window.executeBFS = function() {
-    let result = '';
-    graph.breadthFirstSearch(vertex => {
-        result += `${vertex} `;
+    const startVertex = document.getElementById('startBFS').value;
+    if (!graph.getVertices().includes(startVertex)) {
+        showAlert(`Error: El vértice ${startVertex} no existe en el grafo.`);
+        return;
+    }
+
+    let result = `${startVertex} (Distancia: 0), `;
+    graph.depthFirstSearch(startVertex, (vertex, distance) => {
+        result += `${vertex} (Distancia: ${distance}), `;
     });
-    View.displayBFSResult(result.trim());
-    showAlert(`Recorrido:  ${result.trim()}`);
+    result = result.slice(0, -2);
+    View.displayBFSResult(result);
+    showAlert(`Recorrido BFS: ${result}`);
+}
+
+window.showVertices = function() {
+    const vertices = graph.getVertices();
+    showAlert(`Vértices en el grafo: ${vertices.join(', ')}`);
+}
+
+window.executeDijkstra = function() {
+    const startVertex = document.getElementById('startDijkstra').value;
+    if (!graph.getVertices().includes(startVertex)) {
+        showAlert(`Error: El vértice ${startVertex} no existe en el grafo.`);
+        return;
+    }
+
+    const { distances } = graph.dijkstra(startVertex);
+    let result = `Distancias desde ${startVertex}: `;
+    distances.forEach((distance, vertex) => {
+        result += `${vertex} (Distancia: ${distance}), `;
+    });
+    result = result.slice(0, -2);
+    View.displayBFSResult(result);
+    showAlert(result);
 }

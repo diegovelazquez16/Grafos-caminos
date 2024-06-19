@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="src/styles/style.css">
+    <title>G & C</title>
+    <link rel="stylesheet" href="./src/styles/style.css">
 </head>
 <body>
     <div class="container">
@@ -14,19 +14,29 @@
         <div class="input-section">
             <div class="input-container">
                 <h2>Agregar ciudades</h2>
-                <input type="text" id="vertices" placeholder="Ingrese el nombre de las ciudades">
-                <button onclick="addVertices()">Agregar Vértices</button>
+                <input type="text" id="vertices" placeholder="Ingresa el nombre de la ciudades">
+                <button onclick="addVertices()">Agregar ciudades</button>
             </div>
             <div class="input-container">
-                <h2>Agregar la distancia</h2>
-                <input type="text" id="start" placeholder="Punto de partida">
-                <input type="text" id="end" placeholder="Destino">
-                <input type="number" id="weight" placeholder="Distancia" value="1">
+                <h2>Agregar la distancia </h2>
+                <input type="text" id="start" placeholder="Ingresar punto de partida">
+                <input type="text" id="end" placeholder="Ingresar destino">
+                <input type="number" id="weight" placeholder="Distancia" value="">
                 <button onclick="addEdge()">Agregar distancia</button>
             </div>
             <div class="input-container">
-                <h2>Recorrido</h2>
-                <button onclick="executeBFS()">Iniciar</button>
+                <h2>Recorrido BFS</h2>
+                <input type="text" id="startBFS" placeholder="Ciudad de inicio">
+                <button onclick="executeBFS()">Iniciar BFS</button>
+            </div>
+            <div class="input-container">
+                <h2>Mostrar ciudades</h2>
+                <button onclick="showVertices()">Mostrar ciudades agregadas</button>
+            </div>
+            <div class="input-container">
+                <h2>Algoritmo Dijkstra</h2>
+                <input type="text" id="startDijkstra" placeholder="Ciudad de inicio">
+                <button onclick="executeDijkstra()">Iniciar Dijkstra</button>
             </div>
         </div>
         <div id="output" class="output"></div>

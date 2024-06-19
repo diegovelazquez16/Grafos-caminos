@@ -1,11 +1,11 @@
 export default class View {
-    static showMessage(message) {
+    static showOutput(message) {
         const outputElement = document.getElementById('output');
         outputElement.innerHTML += `${message}<br>`;
     }
 
     static displayBFSResult(result) {
         const outputElement = document.getElementById('output');
-        outputElement.innerHTML = `BFS Result: ${result}`;
+        outputElement.innerHTML = `Recorrido BFS: ${result}`;
     }
 }
